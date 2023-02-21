@@ -1,12 +1,19 @@
-add_executable(defaultBuild main.cpp)
+set(PNAME roster)
+add_executable(${PNAME} main.cpp individual.cpp)
 
-target_link_directories(defaultBuild PUBLIC
+target_include_directories(${PNAME} PUBLIC
+  ${PROJECT_SOURCE_DIR}/inc
+  )
+
+target_link_directories(${PNAME} PUBLIC
   ${PROJECT_SOURCE_DIR}/src
   )
 
+set_property(TARGET ${PNAME} PROPERTY CXX_STANDARD 17)
+
 
 target_compile_options(
-  defaultBuild BEFORE
+  ${PNAME} BEFORE
   PRIVATE
   "$<$<CONFIG:Release>:-ofast>"
 
