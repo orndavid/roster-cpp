@@ -1,27 +1,27 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // srand (need to move functionality somewhere else)
+#include <time.h> // time
+#include <vector>
+#include <algorithm>
+#include <functional>
 
-#include "individual.hpp"
+#include "person_process.hpp" // Includes Person
 
 
 int main(int argc, char** argv){
-  std::cout << "Default build system works\n";
+  std::cout << "Select computing";
   // Configure the random generator
   srand(time(NULL));
-  int no_persons = 10;
+  constexpr int no_persons = 10;
 
   // Create a set of class objects that represent 10 persons
-  Person object;
-
-  std::cout << object.count_days() << "\n";
-  
-  auto bool_day = object.get_day();
-  for(int i=0; i<7; i++){
-    object.generate_shifts();
+  std::vector<Person> persons(no_persons);
+  for(int i=0; i<no_persons; i++){
+    persons[i] = Person(i);
   }
-
-  object.stats();
+  std::cout << "Number of persons: " << persons.size() << "\n";
+  std::for_each(persons.begin(), persons.end(), run_8_values);
+  std::for_each(persons.begin(), persons.end(), std::mem_fn(&Person::stats));
   
-  std::cout << "Finished\n";
+  std::cout << "\nFinished\n";
 }

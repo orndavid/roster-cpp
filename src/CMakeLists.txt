@@ -1,5 +1,8 @@
 set(PNAME roster)
-add_executable(${PNAME} main.cpp individual.cpp)
+add_executable(${PNAME} main.cpp 
+  person.cpp
+  person_process.cpp
+  )
 
 target_include_directories(${PNAME} PUBLIC
   ${PROJECT_SOURCE_DIR}/inc

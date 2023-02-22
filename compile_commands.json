@@ -1,0 +1,16 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/david/Dev/repos/roster-cpp/inc",
+      "-ggdb",
+      "-c",
+      "-o",
+      "CMakeFiles/roster.dir/individual.cpp.o",
+      "/home/david/Dev/repos/roster-cpp/src/individual.cpp"
+    ],
+    "directory": "/home/david/Dev/repos/roster-cpp/build/src",
+    "file": "/home/david/Dev/repos/roster-cpp/src/individual.cpp",
+    "output": "/home/david/Dev/repos/roster-cpp/build/src/CMakeFiles/roster.dir/individual.cpp.o"
+  }
+]
