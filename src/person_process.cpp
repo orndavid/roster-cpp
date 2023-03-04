@@ -1,6 +1,8 @@
 #include "person_process.hpp"
 #include "ERRORS.hpp"
 
+#include <cstdlib>
+
 void run_8_values(Person& person){
   for(int i=0; i<8; i++)
     person.generate_shifts();
@@ -8,5 +10,5 @@ void run_8_values(Person& person){
 
 
 int random_from_selection(std::vector<int>& vector){
-  return 0;
+  return vector[(rand() % vector.size())];
 }

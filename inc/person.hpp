@@ -5,6 +5,7 @@
  */ 
 #include <iostream>
 #include <stdlib.h>
+#include <cstdlib>
 #include <vector>
 
 #ifndef TIMESPAN
