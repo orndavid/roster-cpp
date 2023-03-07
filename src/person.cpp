@@ -12,6 +12,15 @@ Person::Person(){
 
 Person::Person(const int person_id): Person(){
   id = person_id;
+  for(int i=0; i<COUNT; i++){
+    Shifts new_shift;
+    my_shifts.push_back(new_shift);
+  }
+}
+
+
+Person::~Person(){
+  
 }
 
 void print_array(const Shifts& shifts){
@@ -69,6 +78,7 @@ void Person::generate_shifts(){
   std::vector<int> temp = {0, 1, 2};
   int random_shift_value = random_from_selection(temp);
   int work_day = random_available_day(available_days);
+  my_shifts.at(random_shift_value).days[work_day] = true;
 
    /** A person can't work the day after nightshift, unless that
       * previous shift is a nightshift */

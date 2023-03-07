@@ -23,6 +23,7 @@ int main(int argc, char** argv){
   std::cout << "Number of persons: " << persons.size() << "\n";
   std::for_each(persons.begin(), persons.end(), run_8_values);
   std::for_each(persons.begin(), persons.end(), std::mem_fn(&Person::stats));
+  set_info(persons);
   
   std::cout << "\nFinished\n";
 }

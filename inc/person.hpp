@@ -21,6 +21,12 @@ struct Shifts{
   bool days[TIMESPAN] {0};
 };
 
+struct ShiftsToCover{
+  unsigned short days[TIMESPAN] {0};
+};
+
+
+
 
 class Person{
 public:
@@ -28,7 +34,7 @@ public:
   Person(const int person_id);
   /* The following can be introduced to set the available days specifically */
   // Person(const int person_id, const Shifts available_days);
-  ~Person(){};
+  ~Person();
   
   /** Count the number of true values set */
   const int get_id() {return id;}
@@ -39,6 +45,8 @@ public:
   void generate_shifts();
   /** Print stats to stdout */
   void stats();
+  /** Get the shift values */
+  Shifts all_shifts(ShiftTypes index){return my_shifts.at(int(index));}
 
 
 private:
@@ -47,7 +55,7 @@ private:
   Shifts available_days;
   Shifts working_days;
   /* Generic approach so we can increase the number of shifts */
-  std::vector<Shifts> shifts;
+  std::vector<Shifts> my_shifts;
 
   // Internally allow for flipping one available workday to a working day
   void make_working_day_invalid(const int& index);
